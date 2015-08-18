@@ -76,6 +76,12 @@ var Todo = mongoose.model('Todo', {
     });
   });
 
+//Vista de HTML donde irá nuestra SPA
+// Angular Manejará el Frontend
+app.get('*', function(req, res) {
+  res.sendfile('./public/index.html');
+});
+
 //Escucha en el puerto 8080 y corre el servidor con node server.js
 app.listen(8080);
 console.log('Escuchando en el puerto http://localhost:8080') 
