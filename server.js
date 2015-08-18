@@ -5,6 +5,7 @@ var mongoose        = require('mongoose');
 var morgan          = require('morgan');
 var bodyParser      = require('body-parser');
 var methodOverride  = require('method-override');
+var port = process.env.PORT || 8080;
 
 //Conexxión con la base de datos
 mongoose.connect('mongodb://localhost:27017/mean-todo');
@@ -22,7 +23,8 @@ app.use(methodOverride());
 
 //Definición de modelos
 var Todo = mongoose.model('Todo', {
-  text: String
+  text : String,
+  done : Boolean
 });
 
 //Routes de la API
@@ -76,12 +78,11 @@ var Todo = mongoose.model('Todo', {
     });
   });
 
-//Vista de HTML donde irá nuestra SPA
-// Angular Manejará el Frontend
+//APP HTML donde irá nuestra SPA: Angular Manejará el Frontend
 app.get('*', function(req, res) {
   res.sendfile('./public/index.html');
 });
 
 //Escucha en el puerto 8080 y corre el servidor con node server.js
-app.listen(8080);
-console.log('Escuchando en el puerto http://localhost:8080') 
+app.listen(port);
+console.log('Escuchando en el puerto http://localhost:' + port) 
