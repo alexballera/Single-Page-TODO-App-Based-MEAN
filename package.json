@@ -1,19 +1,20 @@
 {
-  "name"          : "mean-todo",
-  "version"       : "0.0.1",
-  "description"   : "Simple TODO app",
-  "main"          : "server.js",
-  "author"        : "Alex Ballera",
-  "license"       : "BSD-2-Clause",
-  "repository"    : {
+  "name": "mean-todo",
+  "version": "0.0.1",
+  "description": "Simple TODO app",
+  "main": "server.js",
+  "author": "Alex Ballera",
+  "license": "BSD-2-Clause",
+  "repository": {
     "type": "git",
     "url": "https://github.com/alexballera/Single-Page-TODO-App-Based-MEAN"
   },
-  "dependencies"  : {
-    "express"     : "~4.7.2",
-    "mongoose"    : "~3.6.2",
-    "morgan"      : "~1.2.2",
-    "body-parser" : "~1.5.2",
-    "method-override" : "~2.1.2"
-  } 
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "bootstrap": "^3.3.5",
+    "express": "~4.7.2",
+    "method-override": "~2.1.2",
+    "mongoose": "~3.6.2",
+    "morgan": "~1.2.2"
+  }
 }

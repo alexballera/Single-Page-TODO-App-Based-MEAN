@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanTodo">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEAN Todo App</title>
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body ng-controller="mainController">
+
+  <div class="container">
+    <!-- Encabezado -->    
+    <header class="jumbotron text-center">
+      <h1>Bienvenido a MEAN-TODOs-App <span class="label label-info">{{ todos.length}}</span></h1>
+    </header>    
+    <!-- Lista de TODOs -->
+    <section class="row" id="todo-list">
+      <div class="col-sm-4 col-sm-offset-4">
+        <div class="checkbox" ng-repeat="todo in todos">
+          <label>
+            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}            
+          </label>
+        </div>
+      </div>
+    </section>
+    <!-- Formulario para agregar nuevos TODOs -->
+    <section class="row" id="todo-form">
+      <div class="col-sm-8 col-sm-offset-2 text-center">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control input-lg text-center" placeholder="Inserta una tarea nueva" ng-model="formData.text">
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="createTodo()">Agregar</button>
+        </form>
+      </div>
+    </section>
+  </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+  <script src="main.js"></script>
+</body>
+</html>

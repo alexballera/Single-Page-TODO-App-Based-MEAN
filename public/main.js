@@ -17,12 +17,12 @@ function mainController($scope, $http) {
   // Cuando se añade un nuevo TODO, manda el texto a la API
   $scope.createTodo = function() {
     $http.post('/api/todos/', $scope.formData)
-      .success(function() {
+      .success(function(data) {
         $scope.formData = {};
         $scope.todos = data;
         console.log(data);
       })
-      .error(function() {
+      .error(function(data) {
         console.log('Error: ' + data);
       });
   };
@@ -31,7 +31,7 @@ function mainController($scope, $http) {
     $http.delete('/api/todos/' + id)
       .success(function(data) {
         $scope.todos = data;
-        $console.log(data);
+        console.log(data);
       })
       .error(function(data) {
         console.log('Error: ' + data);
