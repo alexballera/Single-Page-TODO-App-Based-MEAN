@@ -19,6 +19,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 app.use(methodOverride);
 
+
+//Definición de modelos
+var Todo = mongoose.model('Todo', {
+  text: String
+});
+
 //Escucha en el puerto 8080 y corre el servidor con node server.js
 app.listen(8080);
 console.log('Escuchando en el puerto http://localhost:8080') 
